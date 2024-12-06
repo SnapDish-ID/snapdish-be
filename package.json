@@ -1,0 +1,30 @@
+{
+  "name": "snapdish-be",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "repository": "https://github.com/SnapDish-ID/snapdish-be.git",
+  "contributors": [
+    "Kenny Benaya Nathan <kennybnathan@gmail.com>",
+    "Richard Daniel Sihombing"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "start": "node dist/index.js",
+    "dev": "nodemon",
+    "build": "tsc -p ."
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/dotenv": "^8.2.3",
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.9.1",
+    "nodemon": "^3.1.7",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.3"
+  }
+}
