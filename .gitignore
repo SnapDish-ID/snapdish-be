@@ -1,5 +1,5 @@
 .idea
 node_modules
-
+seeder
 # dotenv environment variables file
 .env
