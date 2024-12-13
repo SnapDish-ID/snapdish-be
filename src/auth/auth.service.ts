@@ -11,7 +11,7 @@ const createToken = async (user: Omit<User, "password">): Promise<string> => {
 }
 
 const hashPassword = async (password: string): Promise<string> => {
-  return bcrypt.hash(password, process.env.SALT_ROUNDS!);
+  return bcrypt.hash(password, Number(process.env.SALT_ROUNDS));
 }
 
 export { createToken, hashPassword };
