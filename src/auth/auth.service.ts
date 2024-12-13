@@ -1,5 +1,6 @@
 import {User} from "../utils/interfaces";
 import jwt from "jsonwebtoken";
+import bcrypt from "bcrypt";
 
 const createToken = async (user: Omit<User, "password">): Promise<string> => {
   return jwt.sign(
@@ -9,4 +10,8 @@ const createToken = async (user: Omit<User, "password">): Promise<string> => {
   );
 }
 
-export { createToken };
+const hashPassword = async (password: string): Promise<string> => {
+  return bcrypt.hash(password, process.env.SALT_ROUNDS!);
+}
+
+export { createToken, hashPassword };

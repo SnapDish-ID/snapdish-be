@@ -9,7 +9,7 @@ import {
 } from "../utils/response/Error";
 import {LoginInput, LoginOutput, RawUser, RegisterOutput, UpdateOutput, UserPublic} from "../utils/interfaces";
 import {emailRegex} from "../utils/regex";
-import {createToken} from "../auth/auth.service";
+import {createToken, hashPassword} from "../auth/auth.service";
 
 const getUser = async (id: string): Promise<UserPublic> => {
   if (!id) {
@@ -58,6 +58,8 @@ const createUser = async (user: RawUser): Promise<RegisterOutput> => {
     throw new UnprocessableEntityError("Email already exists");
   }
 
+  user.password = await hashPassword(user.password);
+
   const newUser = await createNewUser(user);
   if (!newUser) {
     throw new InternalServerError("User not created");
@@ -83,6 +85,8 @@ const updateUser = async (id: string, user: RawUser): Promise<UpdateOutput> => {
   if (await emailExists(user.email)) {
     throw new UnprocessableEntityError("Email already exists");
   }
+
+  user.password = await hashPassword(user.password);
 
   const updatedUser = await updateUserDoc(id, user);
   if (!updatedUser) {
