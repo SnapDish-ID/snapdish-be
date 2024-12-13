@@ -1,6 +1,6 @@
 .idea
 node_modules
-seeder
-
+dist
+src/seeder
 # dotenv environment variables file
 .env
