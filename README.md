@@ -6,8 +6,6 @@
   - [Prerequisites](#prerequisites)
   - [Setup](#setup)
   - [Routines](#routines)
-- [Branches](#branches)
-- [Diagrams](#diagrams)
 
 ## How to run
 ### Prerequisites
@@ -48,19 +46,3 @@
     ```bash
     > yarn dev
     ```
-  
-## Branches
-- `main` = latest stable (___DEPLOYED PRODUCTION___) version\
-    __Do not push directly to this branch__
-- `staging` = latest development (___DEPLOYED DEVELOPMENT___) version\
-    __Only Hotfix commit is allowed to be pushed directly to this branch__
-- `dev` is the development branch, where the latest development (___LOCAL DEVELOPMENT___) version of the project is stored
-  - make a new branch for each feature, bugfix, or enhancement from `dev` branch
-  - use merge request to merge `dev` --> `staging` and `staging` --> `main`
-
-## Diagrams
-___Diagrams in [eraser](https://app.eraser.io/workspace/hYXTwS6zdRpDR4TwviJO)___
-- Activity
-- Prod Architecture
-- Dev Architecture
-- Git Workflow
